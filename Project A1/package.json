@@ -1,0 +1,33 @@
+{
+  "name": "project-a1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "coverage": "hardhat coverage",
+    "deploy:fuji": "hardhat run scripts/deploy-all.js --network fuji",
+    "deploy:avalanche": "hardhat run scripts/deploy-all.js --network avalanche",
+    "deploy:avax-optimized": "hardhat run scripts/deploy-avax.js --network fuji",
+    "deploy": "hardhat run scripts/deploy-all.js && hardhat run scripts/deploy-modules.js",
+    "verify": "hardhat run scripts/verify-all.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "@openzeppelin/hardhat-upgrades": "^3.9.1",
+    "hardhat": "^2.26.2",
+    "solidity-coverage": "^0.8.16"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0",
+    "@openzeppelin/contracts-upgradeable": "^5.4.0",
+    "dotenv": "^17.2.0",
+    "ethers": "^6.0.0",
+    "hardhat-gas-reporter": "^2.3.0"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockStreakStatisticsManager",
+  "sourceName": "contracts/test/MockStreakStatisticsManager.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "callCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "getUserStats",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastNewStreakLength",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastStreakType",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastTotalUserStreakDays",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastUser",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint8",
+          "name": "streakType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "newStreakLength",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalUserStreakDays",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateGlobalStats",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x60808060405234610016576101fe908161001c8239f35b600080fdfe6080604090808252600436101561001557600080fd5b600091823560e01c9182634b28f9a2146101ba575081634e43603a1461018a578163751fe4db1461016b5781639aff32d114610148578163b0b95fa214610120578163baca5421146100fd575063d05d8fe81461007157600080fd5b346100fa5760803660031901126100fa5761008a6101d6565b60243560ff811681036100f65782546001600160a81b0319166001600160a01b039092169190911760a09190911b60ff60a01b1617815560443560015560643560025560035460001981146100e25760010160035580f35b634e487b7160e01b82526011600452602482fd5b8280fd5b80fd5b90503461011c578160031936011261011c576020906002549051908152f35b5080fd5b90503461011c578160031936011261011c57905490516001600160a01b039091168152602090f35b90503461011c578160031936011261011c5760ff6020925460a01c169051908152f35b90503461011c578160031936011261011c576020906001549051908152f35b90503461011c57602036600319011261011c576060916101a86101d6565b50815191818352816020840152820152f35b83903461011c578160031936011261011c576020906003548152f35b600435906001600160a01b03821682036101ec57565b600080fdfea164736f6c6343000816000a",
+  "deployedBytecode": "0x6080604090808252600436101561001557600080fd5b600091823560e01c9182634b28f9a2146101ba575081634e43603a1461018a578163751fe4db1461016b5781639aff32d114610148578163b0b95fa214610120578163baca5421146100fd575063d05d8fe81461007157600080fd5b346100fa5760803660031901126100fa5761008a6101d6565b60243560ff811681036100f65782546001600160a81b0319166001600160a01b039092169190911760a09190911b60ff60a01b1617815560443560015560643560025560035460001981146100e25760010160035580f35b634e487b7160e01b82526011600452602482fd5b8280fd5b80fd5b90503461011c578160031936011261011c576020906002549051908152f35b5080fd5b90503461011c578160031936011261011c57905490516001600160a01b039091168152602090f35b90503461011c578160031936011261011c5760ff6020925460a01c169051908152f35b90503461011c578160031936011261011c576020906001549051908152f35b90503461011c57602036600319011261011c576060916101a86101d6565b50815191818352816020840152820152f35b83903461011c578160031936011261011c576020906003548152f35b600435906001600160a01b03821682036101ec57565b600080fdfea164736f6c6343000816000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,68 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockStreakMilestoneManager",
+  "sourceName": "contracts/test/MockStreakMilestoneManager.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "callCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "streakLength",
+          "type": "uint256"
+        }
+      ],
+      "name": "checkMilestones",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastStreakLength",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastUser",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080806040523461001657610126908161001c8239f35b600080fdfe608080604052600436101561001357600080fd5b600090813560e01c9081630d03879b146100fd575080634b28f9a2146100df57806380c3e362146100765763b0b95fa21461004d57600080fd5b34610073578060031936011261007357546040516001600160a01b039091168152602090f35b80fd5b5034610073576040366003190112610073576004356001600160a01b038116908190036100db5781546001600160a01b03191617815560243560015560025460001981146100c75760010160025580f35b634e487b7160e01b82526011600452602482fd5b5080fd5b50346100735780600319360112610073576020600254604051908152f35b9050346100db57816003193601126100db576020906001548152f3fea164736f6c6343000816000a",
+  "deployedBytecode": "0x608080604052600436101561001357600080fd5b600090813560e01c9081630d03879b146100fd575080634b28f9a2146100df57806380c3e362146100765763b0b95fa21461004d57600080fd5b34610073578060031936011261007357546040516001600160a01b039091168152602090f35b80fd5b5034610073576040366003190112610073576004356001600160a01b038116908190036100db5781546001600160a01b03191617815560243560015560025460001981146100c75760010160025580f35b634e487b7160e01b82526011600452602482fd5b5080fd5b50346100735780600319360112610073576020600254604051908152f35b9050346100db57816003193601126100db576020906001548152f3fea164736f6c6343000816000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

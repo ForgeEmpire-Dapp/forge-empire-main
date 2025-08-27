@@ -1,0 +1,9 @@
+curl -X POST 'https://alcelhwkxdtchrnscdpf.supabase.co/rest/v1/rpc/exec' 
+-H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFsY2VsaHdreGR0Y2hybnNjZHBmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxMjU5NzYsImV4cCI6MjA3MDcwMTk3Nn0.c8aD37ppdN4rwLQga98MhggWkkaRDvbMs1E23jcXElE" 
+-H "Content-Type: application/json" 
+-d '
+{
+  "sql": "-- Create achievements table\nCREATE TABLE public.achievements (\n  id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,\n  user_address TEXT NOT NULL REFERENCES public.profiles(user_address) ON DELETE CASCADE,\n  name TEXT NOT NULL,\n  description TEXT,\n  rarity TEXT NOT NULL,\n  category TEXT NOT NULL,\n  earnedAt TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),\n  xpReward INTEGER
+);\n\n-- Enable RLS\nALTER TABLE public.achievements ENABLE ROW LEVEL SECURITY;\n\n-- Create policies\nCREATE POLICY \"Achievements are viewable by everyone\" \nON public.achievements \nFOR SELECT \nUSING (true);\n\nCREATE POLICY \"Users can insert their own achievements\" \nON public.achievements \nFOR INSERT \nWITH CHECK (auth.uid()::text = user_address);\n\n-- Create activities table\nCREATE TABLE public.activities (\n  id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,\n  user_address TEXT NOT NULL REFERENCES public.profiles(user_address) ON DELETE CASCADE,\n  type TEXT NOT NULL,\n  title TEXT NOT NULL,\n  description TEXT,\n  timestamp TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),\n  xpEarned INTEGER,\n  metadata JSONB
+);\n\n-- Enable RLS\nALTER TABLE public.activities ENABLE ROW LEVEL SECURITY;\n\n-- Create policies\nCREATE POLICY \"Activities are viewable by everyone\" \nON public.activities \nFOR SELECT \nUSING (true);\n\nCREATE POLICY \"Users can insert their own activities\" \nON public.activities \nFOR INSERT \nWITH CHECK (auth.uid()::text = user_address);\n"
+}'

@@ -1,0 +1,34 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockVoter",
+  "sourceName": "contracts/mocks/MockVoter.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "daoAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "proposalId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "support",
+          "type": "bool"
+        }
+      ],
+      "name": "voteOnDAO",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608080604052346100155760d2908161001b8239f35b600080fdfe6080806040526004361015601257600080fd5b600090813560e01c638c46e2f714602857600080fd5b3460c157606036600319011260c157816004356001600160a01b0381169081900360c15760443580151580910360bd57813b1560bd57838381936044936364e93d7f60e11b8452602435600485015260248401525af1801560b257608a575080f35b67ffffffffffffffff8111609e5760405280f35b634e487b7160e01b82526041600452602482fd5b6040513d84823e3d90fd5b8280fd5b5080fdfea164736f6c6343000816000a",
+  "deployedBytecode": "0x6080806040526004361015601257600080fd5b600090813560e01c638c46e2f714602857600080fd5b3460c157606036600319011260c157816004356001600160a01b0381169081900360c15760443580151580910360bd57813b1560bd57838381936044936364e93d7f60e11b8452602435600485015260248401525af1801560b257608a575080f35b67ffffffffffffffff8111609e5760405280f35b634e487b7160e01b82526041600452602482fd5b6040513d84823e3d90fd5b8280fd5b5080fdfea164736f6c6343000816000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

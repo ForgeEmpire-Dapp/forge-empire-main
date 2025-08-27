@@ -1,0 +1,155 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockLeaderboards",
+  "sourceName": "contracts/mocks/MockLeaderboards.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint8",
+          "name": "category",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "increment",
+          "type": "uint256"
+        }
+      ],
+      "name": "ScoreIncremented",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint8",
+          "name": "category",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newScore",
+          "type": "uint256"
+        }
+      ],
+      "name": "ScoreUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint8",
+          "name": "category",
+          "type": "uint8"
+        }
+      ],
+      "name": "getScore",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint8",
+          "name": "category",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "increment",
+          "type": "uint256"
+        }
+      ],
+      "name": "incrementScore",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint8",
+          "name": "category",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "score",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateScore",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "name": "userScores",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080806040523461001657610238908161001c8239f35b600080fdfe60806040818152600436101561001457600080fd5b600091823560e01c9081635f4cec3314610180575080636792ad2d1461011d578063705ed7ae146100d35763f24d2ade1461004e57600080fd5b346100cf5761005c366101f7565b90929160018060a01b0316918285528460205260ff8186209416938486526020528085208054908382018092116100bb5755519081527f3d8df44ec4fee70dd2baec02afa2eb6bba5b3c10f3b26c956827033ffcccb02e90602090a380f35b634e487b7160e01b87526011600452602487fd5b5080fd5b50346100cf57806003193601126100cf57806020926100f06101cc565b6100f86101e7565b6001600160a01b03909116825281855282822060ff9091168252845220549051908152f35b50346100cf576020907fdc7724b4287acea67f086bc934c52cc68c455887e1f03d975deaecb3ead652ff610150366101f7565b6001600160a01b0390921680875286865284872060ff90921680885291865284872083905593519182529390a380f35b919050346101c857806003193601126101c85760209261019e6101cc565b6101a66101e7565b6001600160a01b03909116825281855282822060ff9091168252845220548152f35b8280fd5b600435906001600160a01b03821682036101e257565b600080fd5b6024359060ff821682036101e257565b60609060031901126101e2576004356001600160a01b03811681036101e2579060243560ff811681036101e257906044359056fea164736f6c6343000816000a",
+  "deployedBytecode": "0x60806040818152600436101561001457600080fd5b600091823560e01c9081635f4cec3314610180575080636792ad2d1461011d578063705ed7ae146100d35763f24d2ade1461004e57600080fd5b346100cf5761005c366101f7565b90929160018060a01b0316918285528460205260ff8186209416938486526020528085208054908382018092116100bb5755519081527f3d8df44ec4fee70dd2baec02afa2eb6bba5b3c10f3b26c956827033ffcccb02e90602090a380f35b634e487b7160e01b87526011600452602487fd5b5080fd5b50346100cf57806003193601126100cf57806020926100f06101cc565b6100f86101e7565b6001600160a01b03909116825281855282822060ff9091168252845220549051908152f35b50346100cf576020907fdc7724b4287acea67f086bc934c52cc68c455887e1f03d975deaecb3ead652ff610150366101f7565b6001600160a01b0390921680875286865284872060ff90921680885291865284872083905593519182529390a380f35b919050346101c857806003193601126101c85760209261019e6101cc565b6101a66101e7565b6001600160a01b03909116825281855282822060ff9091168252845220548152f35b8280fd5b600435906001600160a01b03821682036101e257565b600080fd5b6024359060ff821682036101e257565b60609060031901126101e2576004356001600160a01b03811681036101e2579060243560ff811681036101e257906044359056fea164736f6c6343000816000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

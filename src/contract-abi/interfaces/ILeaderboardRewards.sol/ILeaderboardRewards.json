@@ -1,0 +1,471 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ILeaderboardRewards",
+  "sourceName": "contracts/interfaces/ILeaderboardRewards.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "rank",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "reward",
+          "type": "uint256"
+        }
+      ],
+      "name": "RankRewardEarned",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "indexed": true,
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "minRank",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maxRank",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokenReward",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "xpReward",
+          "type": "uint256"
+        }
+      ],
+      "name": "RewardTierCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokenAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "xpAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "badgeCount",
+          "type": "uint256"
+        }
+      ],
+      "name": "RewardsClaimed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "indexed": true,
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "totalRewards",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "recipientCount",
+          "type": "uint256"
+        }
+      ],
+      "name": "SeasonRewardsDistributed",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "rank",
+          "type": "uint256"
+        }
+      ],
+      "name": "awardRankReward",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "calculateUserRewards",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "pendingTokens",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "claimedTokens",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "pendingXP",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "claimedXP",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "badgesEarned",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "lastClaimTime",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct ILeaderboardRewards.UserRewards",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "claimRewards",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        }
+      ],
+      "name": "distributeSeasonRewards",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "emergencyWithdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "getPendingRewards",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "pendingTokens",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "pendingXP",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "pendingBadges",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "rank",
+          "type": "uint256"
+        }
+      ],
+      "name": "getRewardTier",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "minRank",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxRank",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenReward",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "xpReward",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "badgeURI",
+              "type": "string"
+            },
+            {
+              "internalType": "bool",
+              "name": "hasBadge",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct ILeaderboardRewards.RewardTier",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        }
+      ],
+      "name": "getSeasonInfo",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalPool",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "distributedAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "isActive",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "seasonEndTime",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "poolAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setRewardPool",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "minRank",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxRank",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenReward",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "xpReward",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "badgeURI",
+              "type": "string"
+            },
+            {
+              "internalType": "bool",
+              "name": "hasBadge",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct ILeaderboardRewards.RewardTier[]",
+          "name": "tiers",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "setupRewardTiers",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

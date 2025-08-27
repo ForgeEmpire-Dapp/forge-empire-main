@@ -1,0 +1,7 @@
+project_id = "alcelhwkxdtchrnscdpf"
+
+[functions.security-cleanup]
+verify_jwt = true
+
+[functions.realtime-chat]
+verify_jwt = true

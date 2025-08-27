@@ -1,0 +1,129 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockTokenManagerCore",
+  "sourceName": "contracts/test/MockTokenManagerCore.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "feeWallet",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        }
+      ],
+      "name": "isTokenLaunched",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "protocolConfig",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "protocolFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_feeWallet",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_protocolFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "setProtocolConfig",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "launched",
+          "type": "bool"
+        }
+      ],
+      "name": "setTokenLaunched",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "tokenLaunched",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608080604052346100165761021f908161001c8239f35b600080fdfe6080604090808252600436101561001557600080fd5b600090813560e01c90816341765989146101b957508063564e5ad21461017c5780636047c5a214610139578063b0e21e8a1461011a578063dbe7e528146100cd578063f25f4b56146100a05763f5efbb4f1461007057600080fd5b3461009d578060031936011261009d575060015460025482516001600160a01b0390921682526020820152f35b80fd5b5090346100c957816003193601126100c95760015490516001600160a01b039091168152602090f35b5080fd5b5090346100c957806003193601126100c9576100e76101f7565b90602435918215158093036101165760018060a01b031683528260205282209060ff8019835416911617905580f35b8380fd5b5090346100c957816003193601126100c9576020906002549051908152f35b5090346100c95736600319011261009d576001600160a01b0361015a6101f7565b166bffffffffffffffffffffffff60a01b600154161760015560243560025580f35b5090346100c95760203660031901126100c95760209160ff9082906001600160a01b036101a76101f7565b16815280855220541690519015158152f35b905082346101f35760203660031901126101f35760209260ff91906001600160a01b036101e46101f7565b16815280855220541615158152f35b8280fd5b600435906001600160a01b038216820361020d57565b600080fdfea164736f6c6343000816000a",
+  "deployedBytecode": "0x6080604090808252600436101561001557600080fd5b600090813560e01c90816341765989146101b957508063564e5ad21461017c5780636047c5a214610139578063b0e21e8a1461011a578063dbe7e528146100cd578063f25f4b56146100a05763f5efbb4f1461007057600080fd5b3461009d578060031936011261009d575060015460025482516001600160a01b0390921682526020820152f35b80fd5b5090346100c957816003193601126100c95760015490516001600160a01b039091168152602090f35b5080fd5b5090346100c957806003193601126100c9576100e76101f7565b90602435918215158093036101165760018060a01b031683528260205282209060ff8019835416911617905580f35b8380fd5b5090346100c957816003193601126100c9576020906002549051908152f35b5090346100c95736600319011261009d576001600160a01b0361015a6101f7565b166bffffffffffffffffffffffff60a01b600154161760015560243560025580f35b5090346100c95760203660031901126100c95760209160ff9082906001600160a01b036101a76101f7565b16815280855220541690519015158152f35b905082346101f35760203660031901126101f35760209260ff91906001600160a01b036101e46101f7565b16815280855220541615158152f35b8280fd5b600435906001600160a01b038216820361020d57565b600080fdfea164736f6c6343000816000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

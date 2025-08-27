@@ -1,0 +1,290 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockForgeFeeManager",
+  "sourceName": "contracts/test/MockForgeFeeManager.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "burnRate",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "cooldown",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "feesEnabled",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getFeeStats",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "limitsEnabled",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "liquidityRate",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxTransaction",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxWallet",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "enabled",
+          "type": "bool"
+        }
+      ],
+      "name": "setFeesEnabled",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "enabled",
+          "type": "bool"
+        }
+      ],
+      "name": "setLimitsEnabled",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "fees",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "burned",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "treasury",
+          "type": "uint256"
+        }
+      ],
+      "name": "simulateFees",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalBurned",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalFees",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalTreasury",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "transferFee",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "treasuryRate",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_transferFee",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "_burnRate",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "_treasuryRate",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "_liquidityRate",
+          "type": "uint16"
+        }
+      ],
+      "name": "updateFeeConfig",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_maxTransaction",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_maxWallet",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_cooldown",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateLimitConfig",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608080604052346100165761044c908161001c8239f35b600080fdfe60806040908082526004908136101561001757600080fd5b600092833560e01c91826313114a9d146103e1575081633582ad23146103ba578163415954bd1461039e57816341aea9de14610369578163548cbeb014610345578163787a08a614610326578163897534a914610307578163a64e4f8a146102e3578163a901dd92146102b5578163acb2ad6f14610294578163bed9985014610270578163c3f70b5214610251578163d652d5721461020f578163d89135cd146101f0578163e4b72516146101cd578163f28ab2be1461019d578163f8b45b051461017e575063fc1eb1a9146100ec57600080fd5b3461017a57608036600319011261017a573561ffff90818116809103610176576024359082821682036101725760443591838316830361016e57606435938416840361016e5763ffff000065ffff000000009267ffff00000000000087549660301b169567ffffffffffffffff1916179160101b16179160201b161717815580f35b8480fd5b8380fd5b8280fd5b5080fd5b83903461017a578160031936011261017a576020906002549051908152f35b83903461017a578160031936011261017a5760609060055490600654906007549181519384526020840152820152f35b83903461017a578160031936011261017a5761ffff60209254915191831c168152f35b83903461017a578160031936011261017a576020906006549051908152f35b833461024e5761024861023261023d610227366103fd565b93909160055461041c565b60055560065461041c565b60065560075461041c565b60075580f35b80fd5b83903461017a578160031936011261017a576020906001549051908152f35b83903461017a578160031936011261017a5761ffff6020925460101c169051908152f35b83903461017a578160031936011261017a5761ffff60209254169051908152f35b50503461017a57602036600319011261017a5780358015158091036101765760ff8019835416911617905580f35b9050823461024e578060031936011261024e575060ff602092541690519015158152f35b83903461017a578160031936011261017a576020906007549051908152f35b83903461017a578160031936011261017a576020906003549051908152f35b83903461017a578160031936011261017a5761ffff6020925460301c169051908152f35b50503461017a57602036600319011261017a5780358015158091036101765761ff0082549160081b169061ff00191617905580f35b833461024e576103ad366103fd565b9160015560025560035580f35b9050823461024e578060031936011261024e575060ff6020925460081c1690519015158152f35b84903461017a578160031936011261017a576020906005548152f35b606090600319011261041757600435906024359060443590565b600080fd5b9190820180921161042957565b634e487b7160e01b600052601160045260246000fdfea164736f6c6343000816000a",
+  "deployedBytecode": "0x60806040908082526004908136101561001757600080fd5b600092833560e01c91826313114a9d146103e1575081633582ad23146103ba578163415954bd1461039e57816341aea9de14610369578163548cbeb014610345578163787a08a614610326578163897534a914610307578163a64e4f8a146102e3578163a901dd92146102b5578163acb2ad6f14610294578163bed9985014610270578163c3f70b5214610251578163d652d5721461020f578163d89135cd146101f0578163e4b72516146101cd578163f28ab2be1461019d578163f8b45b051461017e575063fc1eb1a9146100ec57600080fd5b3461017a57608036600319011261017a573561ffff90818116809103610176576024359082821682036101725760443591838316830361016e57606435938416840361016e5763ffff000065ffff000000009267ffff00000000000087549660301b169567ffffffffffffffff1916179160101b16179160201b161717815580f35b8480fd5b8380fd5b8280fd5b5080fd5b83903461017a578160031936011261017a576020906002549051908152f35b83903461017a578160031936011261017a5760609060055490600654906007549181519384526020840152820152f35b83903461017a578160031936011261017a5761ffff60209254915191831c168152f35b83903461017a578160031936011261017a576020906006549051908152f35b833461024e5761024861023261023d610227366103fd565b93909160055461041c565b60055560065461041c565b60065560075461041c565b60075580f35b80fd5b83903461017a578160031936011261017a576020906001549051908152f35b83903461017a578160031936011261017a5761ffff6020925460101c169051908152f35b83903461017a578160031936011261017a5761ffff60209254169051908152f35b50503461017a57602036600319011261017a5780358015158091036101765760ff8019835416911617905580f35b9050823461024e578060031936011261024e575060ff602092541690519015158152f35b83903461017a578160031936011261017a576020906007549051908152f35b83903461017a578160031936011261017a576020906003549051908152f35b83903461017a578160031936011261017a5761ffff6020925460301c169051908152f35b50503461017a57602036600319011261017a5780358015158091036101765761ff0082549160081b169061ff00191617905580f35b833461024e576103ad366103fd565b9160015560025560035580f35b9050823461024e578060031936011261024e575060ff6020925460081c1690519015158152f35b84903461017a578160031936011261017a576020906005548152f35b606090600319011261041757600435906024359060443590565b600080fd5b9190820180921161042957565b634e487b7160e01b600052601160045260246000fdfea164736f6c6343000816000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

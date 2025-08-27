@@ -1,0 +1,604 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ILeaderboardStats",
+  "sourceName": "contracts/interfaces/ILeaderboardStats.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "indexed": true,
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "totalParticipants",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "averageScore",
+          "type": "uint256"
+        }
+      ],
+      "name": "AnalyticsCalculated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "milestone",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "MilestoneAchieved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newTotalScore",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "participationCount",
+          "type": "uint256"
+        }
+      ],
+      "name": "StatsUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        }
+      ],
+      "name": "calculateAnalytics",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "totalParticipants",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "activeParticipants",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "averageScore",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "highestScore",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalScoreDistributed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "lastUpdateTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "currentLeader",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct ILeaderboardStats.LeaderboardAnalytics",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "checkMilestones",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        }
+      ],
+      "name": "exportAnalytics",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        }
+      ],
+      "name": "getLeaderboardAnalytics",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "totalParticipants",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "activeParticipants",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "averageScore",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "highestScore",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalScoreDistributed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "lastUpdateTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "currentLeader",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct ILeaderboardStats.LeaderboardAnalytics",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "limit",
+          "type": "uint256"
+        }
+      ],
+      "name": "getRankHistory",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "timestamp",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rank",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "score",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct ILeaderboardStats.RankHistory[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timeRange",
+          "type": "uint256"
+        }
+      ],
+      "name": "getTopPerformers",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "users",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "scores",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "ranks",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "periods",
+          "type": "uint256"
+        }
+      ],
+      "name": "getTrendData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "period",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "averageScore",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "participantCount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "topScore",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "topScorer",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct ILeaderboardStats.TrendData[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user1",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "user2",
+          "type": "address"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        }
+      ],
+      "name": "getUserComparison",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "user1Score",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "user2Score",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "user1Rank",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "user2Rank",
+          "type": "uint256"
+        },
+        {
+          "internalType": "int256",
+          "name": "scoreDifference",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "getUserMilestones",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "getUserStats",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalScoreEarned",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "highestRank",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "averageRank",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "participationCount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "firstParticipation",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "lastActivity",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        }
+      ],
+      "name": "getUserTimeFrameScore",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        }
+      ],
+      "name": "getUserTypeScore",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.LeaderboardType",
+          "name": "leaderboardType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum ILeaderboardCore.TimeFrame",
+          "name": "timeFrame",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "score",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "rank",
+          "type": "uint256"
+        }
+      ],
+      "name": "recordActivity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "resetUserStats",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

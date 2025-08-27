@@ -1,0 +1,128 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockStreakRewards",
+  "sourceName": "contracts/mocks/MockStreakRewards.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "totalXP",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "badgeIds",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "BatchRewardsClaimed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint8",
+          "name": "streakType",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "threshold",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "xpReward",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "badgeId",
+          "type": "uint256"
+        }
+      ],
+      "name": "RewardClaimed",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "streakType",
+          "type": "uint8"
+        }
+      ],
+      "name": "claimAllRewards",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "streakType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint32",
+          "name": "threshold",
+          "type": "uint32"
+        }
+      ],
+      "name": "claimReward",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint8",
+          "name": "streakType",
+          "type": "uint8"
+        }
+      ],
+      "name": "getAvailableRewards",
+      "outputs": [
+        {
+          "internalType": "uint32[]",
+          "name": "",
+          "type": "uint32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080806040523461001657610260908161001c8239f35b600080fdfe604060808152600436101561001357600080fd5b600090813560e01c8063750385b514610156578063adbadee2146100b25763b5e449771461004057600080fd5b346100ae57806003193601126100ae576100586101e5565b906024359163ffffffff83168093036100aa5760018260ff93519485526064602086015284015216907fb2c109330fbb53a49ac28d45562a563f660109afe207598d9e5b6379debe0f5960603392a380f35b8380fd5b5080fd5b50346100ae576020908160031936011261015257906100cf6101e5565b506100d86101fa565b906001808352818301938236863760016100f185610230565b5280519381850191606486528486015251809152606084019492865b82811061013f5787337f7ba70f706a3e2f61c8f68fc0c6238061340ed7e51e8598774654727a827fa7dc888a0389a280f35b845187529581019593810193830161010d565b8280fd5b50346100ae57806003193601126100ae576004356001600160a01b038116036100ae5760243560ff8116036100ae5761018d6101fa565b9160019060018452602093848101948036873760056101ab83610230565b528451948186019282875251809352850195925b8281106101cc5785870386f35b835163ffffffff168752958101959281019284016101bf565b6004359060ff821682036101f557565b600080fd5b604051906040820182811067ffffffffffffffff82111761021a57604052565b634e487b7160e01b600052604160045260246000fd5b80511561023d5760200190565b634e487b7160e01b600052603260045260246000fdfea164736f6c6343000816000a",
+  "deployedBytecode": "0x604060808152600436101561001357600080fd5b600090813560e01c8063750385b514610156578063adbadee2146100b25763b5e449771461004057600080fd5b346100ae57806003193601126100ae576100586101e5565b906024359163ffffffff83168093036100aa5760018260ff93519485526064602086015284015216907fb2c109330fbb53a49ac28d45562a563f660109afe207598d9e5b6379debe0f5960603392a380f35b8380fd5b5080fd5b50346100ae576020908160031936011261015257906100cf6101e5565b506100d86101fa565b906001808352818301938236863760016100f185610230565b5280519381850191606486528486015251809152606084019492865b82811061013f5787337f7ba70f706a3e2f61c8f68fc0c6238061340ed7e51e8598774654727a827fa7dc888a0389a280f35b845187529581019593810193830161010d565b8280fd5b50346100ae57806003193601126100ae576004356001600160a01b038116036100ae5760243560ff8116036100ae5761018d6101fa565b9160019060018452602093848101948036873760056101ab83610230565b528451948186019282875251809352850195925b8281106101cc5785870386f35b835163ffffffff168752958101959281019284016101bf565b6004359060ff821682036101f557565b600080fd5b604051906040820182811067ffffffffffffffff82111761021a57604052565b634e487b7160e01b600052604160045260246000fd5b80511561023d5760200190565b634e487b7160e01b600052603260045260246000fdfea164736f6c6343000816000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

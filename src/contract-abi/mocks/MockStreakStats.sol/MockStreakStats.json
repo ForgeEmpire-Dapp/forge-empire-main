@@ -1,0 +1,59 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockStreakStats",
+  "sourceName": "contracts/mocks/MockStreakStats.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint8",
+          "name": "streakType",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "newStreak",
+          "type": "uint32"
+        }
+      ],
+      "name": "UserActivity",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint8",
+          "name": "streakType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint32",
+          "name": "newStreak",
+          "type": "uint32"
+        }
+      ],
+      "name": "updateUserActivity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608080604052346100155760b1908161001b8239f35b600080fdfe6080806040526004361015601257600080fd5b600090813560e01c63c46a9b8714602857600080fd5b3460a057606036600319011260a0576004356001600160a01b03811690819003609c576024359160ff831680930360985760443563ffffffff8116809103609457816020917f0f5831695ddf0c0cbccedbc6029de041d3c09495f570b7d69f6b5fbac3b5b5d29352a380f35b8480fd5b8380fd5b8280fd5b5080fdfea164736f6c6343000816000a",
+  "deployedBytecode": "0x6080806040526004361015601257600080fd5b600090813560e01c63c46a9b8714602857600080fd5b3460a057606036600319011260a0576004356001600160a01b03811690819003609c576024359160ff831680930360985760443563ffffffff8116809103609457816020917f0f5831695ddf0c0cbccedbc6029de041d3c09495f570b7d69f6b5fbac3b5b5d29352a380f35b8480fd5b8380fd5b8280fd5b5080fdfea164736f6c6343000816000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,18 @@
+// Profile Components Exports
+export { ProfileSection } from './ProfileSection'
+// ProfileViewer removed - using EnhancedProfileViewer instead
+export { EnhancedProfileViewer } from './EnhancedProfileViewer'
+export { ProfileAnalytics } from './ProfileAnalytics'
+export { BannerUploader } from './BannerUploader'
+export { OnChainProfileViewer } from './OnChainProfileViewer'
+export { ProfileEditor } from './ProfileEditor'
+export { ProfileEditorDialog } from './ProfileEditorDialog'
+export { ProfileShare } from './ProfileShare'
+export { BadgeGallery } from './BadgeGallery'
+export { ForgeTokenCard } from './ForgeTokenCard'
+export { ForgePassCard } from './ForgePassCard'
+export { MediaUploader } from './MediaUploader'
+export { ProfileMediaUploader } from './ProfileMediaUploader'
+export { PrivacySettings } from './PrivacySettings'
+export { ProfileMediaDialog } from './ProfileMediaDialog'
+export { SecureWalletConnector } from './SecureWalletConnector'

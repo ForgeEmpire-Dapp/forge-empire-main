@@ -1,0 +1,74 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockStreakMilestones",
+  "sourceName": "contracts/mocks/MockStreakMilestones.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint32",
+          "name": "milestoneId",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "specialReward",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "badgeId",
+          "type": "uint256"
+        }
+      ],
+      "name": "MilestoneAchieved",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "milestoneId",
+          "type": "uint32"
+        }
+      ],
+      "name": "claimMilestone",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "updateTotalStreakDays",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608080604052346100155760ea908161001b8239f35b600080fdfe6080806040526004361015601257600080fd5b600090813560e01c90816339c14eff14605a5750639e4f27eb14603457600080fd5b3460575760203660031901126057576004356001600160a01b0381160360575780f35b80fd5b90503460d957602036600319011260d9576004359063ffffffff821680920360d55760608152600e60608201526d54657374204d696c6573746f6e6560901b608082015260646020820152600160408201527f7b9e752406424e7867a50a8845225facb65e3ad36b4f9c3133932d267d22b1c060a03392a380f35b8280fd5b5080fdfea164736f6c6343000816000a",
+  "deployedBytecode": "0x6080806040526004361015601257600080fd5b600090813560e01c90816339c14eff14605a5750639e4f27eb14603457600080fd5b3460575760203660031901126057576004356001600160a01b0381160360575780f35b80fd5b90503460d957602036600319011260d9576004359063ffffffff821680920360d55760608152600e60608201526d54657374204d696c6573746f6e6560901b608082015260646020820152600160408201527f7b9e752406424e7867a50a8845225facb65e3ad36b4f9c3133932d267d22b1c060a03392a380f35b8280fd5b5080fdfea164736f6c6343000816000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

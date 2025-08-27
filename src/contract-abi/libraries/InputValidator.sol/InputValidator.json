@@ -1,0 +1,141 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "InputValidator",
+  "sourceName": "contracts/libraries/InputValidator.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "ContainsProfanity",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "EmptyInput",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidAddress",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidAmount",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidCharacters",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidEmailFormat",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidFormat",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidLength",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidRange",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidString",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidUrlFormat",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "StringTooLong",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "StringTooShort",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_DESCRIPTION_LENGTH",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_STRING_LENGTH",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_URL_LENGTH",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_USERNAME_LENGTH",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MIN_USERNAME_LENGTH",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608080604052346100195760d4908161001f823930815050f35b600080fdfe6080806040526004361015601257600080fd5b600090813560e01c908163155b1d981460ae575080631cd896c114609857806334ccc5ea1460815780639201ea0a14606a5763cb71146e14605257600080fd5b80600319360112606757602060405160c88152f35b80fd5b508060031936011260675760206040516101f48152f35b508060031936011260675760206040516103e88152f35b5080600319360112606757602060405160328152f35b90508160031936011260c35780600360209252f35b5080fdfea164736f6c6343000816000a",
+  "deployedBytecode": "0x6080806040526004361015601257600080fd5b600090813560e01c908163155b1d981460ae575080631cd896c114609857806334ccc5ea1460815780639201ea0a14606a5763cb71146e14605257600080fd5b80600319360112606757602060405160c88152f35b80fd5b508060031936011260675760206040516101f48152f35b508060031936011260675760206040516103e88152f35b5080600319360112606757602060405160328152f35b90508160031936011260c35780600360209252f35b5080fdfea164736f6c6343000816000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

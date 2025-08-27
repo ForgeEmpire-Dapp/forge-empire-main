@@ -1,0 +1,48 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockReferralEngine",
+  "sourceName": "contracts/test/MockReferralEngine.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "referrer",
+          "type": "address"
+        }
+      ],
+      "name": "registerReferral",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "registeredReferrals",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608080604052346100155760e5908161001b8239f35b600080fdfe60806040526004361015601157600080fd5b6000803560e01c80635603b9f91460695763ec57b67914603057600080fd5b3460665760203660031901126066576020906001600160a01b039060409082605560be565b168152808452205416604051908152f35b80fd5b50346066576040366003190112606657607f60be565b6001600160a01b03602435818116929083900360ba571682528160205260408220906bffffffffffffffffffffffff60a01b82541617905580f35b8380fd5b600435906001600160a01b038216820360d357565b600080fdfea164736f6c6343000816000a",
+  "deployedBytecode": "0x60806040526004361015601157600080fd5b6000803560e01c80635603b9f91460695763ec57b67914603057600080fd5b3460665760203660031901126066576020906001600160a01b039060409082605560be565b168152808452205416604051908152f35b80fd5b50346066576040366003190112606657607f60be565b6001600160a01b03602435818116929083900360ba571682528160205260408220906bffffffffffffffffffffffff60a01b82541617905580f35b8380fd5b600435906001600160a01b038216820360d357565b600080fdfea164736f6c6343000816000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,86 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockStreakRewardManager",
+  "sourceName": "contracts/test/MockStreakRewardManager.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "callCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint8",
+          "name": "streakType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "streakLength",
+          "type": "uint256"
+        }
+      ],
+      "name": "checkAndAwardRewards",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastStreakLength",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastStreakType",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastUser",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080806040523461001657610173908161001c8239f35b600080fdfe608080604052600436101561001357600080fd5b600090813560e01c9081630d03879b1461014a575080634b28f9a21461012c5780639aff32d1146101095780639f78874a146100815763b0b95fa21461005857600080fd5b3461007e578060031936011261007e57546040516001600160a01b039091168152602090f35b80fd5b503461007e57606036600319011261007e576004356001600160a01b03811690819003610105576024359060ff821682036101015782546001600160a81b0319161760a09190911b60ff60a01b1617815560443560015560025460001981146100ed5760010160025580f35b634e487b7160e01b82526011600452602482fd5b8280fd5b5080fd5b503461007e578060031936011261007e5760ff6020915460a01c16604051908152f35b503461007e578060031936011261007e576020600254604051908152f35b9050346101055781600319360112610105576020906001548152f3fea164736f6c6343000816000a",
+  "deployedBytecode": "0x608080604052600436101561001357600080fd5b600090813560e01c9081630d03879b1461014a575080634b28f9a21461012c5780639aff32d1146101095780639f78874a146100815763b0b95fa21461005857600080fd5b3461007e578060031936011261007e57546040516001600160a01b039091168152602090f35b80fd5b503461007e57606036600319011261007e576004356001600160a01b03811690819003610105576024359060ff821682036101015782546001600160a81b0319161760a09190911b60ff60a01b1617815560443560015560025460001981146100ed5760010160025580f35b634e487b7160e01b82526011600452602482fd5b8280fd5b5080fd5b503461007e578060031936011261007e5760ff6020915460a01c16604051908152f35b503461007e578060031936011261007e576020600254604051908152f35b9050346101055781600319360112610105576020906001548152f3fea164736f6c6343000816000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,24 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "RejectingWallet",
+  "sourceName": "contracts/RejectingWallet.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "PaymentRejected",
+      "type": "error"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "bytecode": "0x608080604052346013576038908160198239f35b600080fdfe6080806040523615601c576040516338b0ea4360e01b8152600490fd5b6338b0ea4360e01b8152600490fdfea164736f6c6343000816000a",
+  "deployedBytecode": "0x6080806040523615601c576040516338b0ea4360e01b8152600490fd5b6338b0ea4360e01b8152600490fdfea164736f6c6343000816000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
