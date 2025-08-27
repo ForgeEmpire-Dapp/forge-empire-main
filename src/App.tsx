@@ -16,7 +16,7 @@ import Quests from "./pages/Quests";
 import Profile from "./pages/Profile";
 import UserProfile from "./pages/UserProfile";
 import Forge from "./pages/Forge";
-import DAO from "./pages/DAO";
+import DAOPage from "./pages/DAO";
 import Kudos from "./pages/Kudos";
 import TipJar from "./pages/TipJar";
 import Community from "./pages/Community";
