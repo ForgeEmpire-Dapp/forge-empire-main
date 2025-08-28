@@ -16,11 +16,6 @@ export const useVoiceSocket = (addMessage: (type: 'user' | 'ai', content: string
   const connectionStartTime = useRef<number>(0)
   const lastMessageTime = useRef<number>(0)
 
-  const stateRef = useRef({ isReconnecting, metrics, toast, voiceSettings, userLevel, userXP, address, connectToChat, attemptReconnect })
-  useEffect(() => {
-    stateRef.current = { isReconnecting, metrics, toast, voiceSettings, userLevel, userXP, address, connectToChat, attemptReconnect }
-  })
-
   const updatePerformanceMetrics = useCallback(() => {
     const now = Date.now()
     if (lastMessageTime.current > 0) {
@@ -142,6 +137,11 @@ export const useVoiceSocket = (addMessage: (type: 'user' | 'ai', content: string
       setIsReconnecting(false)
     }, delay)
   }, [])
+
+  const stateRef = useRef({ isReconnecting, metrics, toast, voiceSettings, userLevel, userXP, address, connectToChat, attemptReconnect })
+  useEffect(() => {
+    stateRef.current = { isReconnecting, metrics, toast, voiceSettings, userLevel, userXP, address, connectToChat, attemptReconnect }
+  })
 
   useEffect(() => {
     connectToChat()

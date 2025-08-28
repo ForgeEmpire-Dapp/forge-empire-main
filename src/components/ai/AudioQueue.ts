@@ -31,7 +31,20 @@ export class AudioQueue {
 
     try {
       const wavData = createWavFromPCM(audioData)
-      const audioBuffer = await this.audioContext.decodeAudioData(wavData.buffer)
+      // Ensure we pass an ArrayBuffer, not SharedArrayBuffer
+      const buffer =
+        wavData.buffer instanceof ArrayBuffer
+          ? wavData.buffer
+          : (() => {
+              // Convert SharedArrayBuffer to ArrayBuffer
+              const sharedBuf = wavData.buffer as SharedArrayBuffer
+              const uint8 = new Uint8Array(sharedBuf)
+              const arrayBuf = new ArrayBuffer(uint8.length)
+              new Uint8Array(arrayBuf).set(uint8)
+              return arrayBuf
+            })()
+
+      const audioBuffer = await this.audioContext.decodeAudioData(buffer)
       
       const source = this.audioContext.createBufferSource()
       source.buffer = audioBuffer

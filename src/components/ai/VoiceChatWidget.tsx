@@ -54,7 +54,12 @@ export const VoiceChatWidget = ({ className }: VoiceChatWidgetProps) => {
     setVoiceSettings, 
     connectToChat, 
     resetConnection 
-  } = useVoiceSocket(addMessage, userLevel, userXP, address)
+  } = useVoiceSocket(
+    addMessage, 
+    typeof userLevel === 'bigint' ? userLevel : BigInt(0), 
+    typeof userXP === 'bigint' ? userXP : BigInt(0), 
+    address
+  )
   
   // Refs
   const recorderRef = useRef<AudioRecorder | null>(null)
@@ -137,7 +142,7 @@ export const VoiceChatWidget = ({ className }: VoiceChatWidgetProps) => {
 
   const handleQuickAction = (action: string) => {
     const realUserData = {
-      level: userLevel ? Number(userLevel) : 0,
+      level: typeof userLevel === 'bigint' ? Number(userLevel) : 0,
       xp: userXP ? Number(userXP) : 0,
       badges: badgeCount,
       tokens: tokenBalance ? Number(tokenBalance) / Math.pow(10, 18) : 0,
