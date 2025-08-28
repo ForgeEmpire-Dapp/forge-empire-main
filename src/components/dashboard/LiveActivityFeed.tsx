@@ -108,7 +108,7 @@ export const LiveActivityFeed = () => {
         if (Math.random() > 0.8) {
           const newActivity: ActivityItem = {
             id: Date.now().toString(),
-            type: ['quest', 'social', 'badge', 'token'][Math.floor(Math.random() * 4)],
+            type: (['quest', 'social', 'badge', 'token'] as ActivityItem['type'][])[Math.floor(Math.random() * 4)],
             user: `0x${Math.random().toString(16).substr(2, 4)}...${Math.random().toString(16).substr(2, 4)}`,
             action: 'Performed an action',
             timestamp: new Date()

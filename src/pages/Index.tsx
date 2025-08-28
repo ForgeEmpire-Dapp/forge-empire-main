@@ -36,23 +36,8 @@ const Index = () => {
             </div>
             <EnhancedDashboard />
           </section>
-          
-          {/* Feature Showcase */}
-          <section className="py-8">
-            <FeatureGrid />
-          </section>
-
-          {/* Quick Actions & Live Feed */}
-          <section className="py-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <QuickActionsHub />
-              <LiveActivityFeed />
-            </div>
-          </section>
-        </div>
-      </main>
-      
-      {/* Compact Footer */}
+          </div>
+       {/* Compact Footer */}
       <footer className="border-t border-border/40 py-8 bg-card/50">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center space-y-3">
@@ -73,6 +58,8 @@ const Index = () => {
           </div>
         </div>
       </footer>
+      </main>
+
       
       {/* Floating Components */}
       <SecurityAlert />

@@ -23,7 +23,7 @@ import { cn } from '@/lib/utils'
 interface FeatureCardProps {
   title: string
   description: string
-  icon: React.ComponentType
+  icon: React.ComponentType<{ className?: string }>
   href: string
   status?: 'live' | 'coming-soon' | 'beta'
   highlight?: boolean
@@ -154,7 +154,7 @@ const features = [
     status: 'live' as const
   },
   {
-    title: 'Token Creator',
+    title: 'Token Registry',
     description: 'Launch your own tokens on Avalanche with built-in features and utilities.',
     icon: Coins,
     href: '/forge',

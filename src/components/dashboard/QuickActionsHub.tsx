@@ -177,19 +177,7 @@ export const QuickActionsHub = () => {
   const recommendedActions = getRecommendedActions()
   const allActions = getAvailableActions()
 
-  if (!isConnected) {
-    return (
-      <Card className="col-span-full">
-        <CardContent className="p-8 text-center">
-          <Zap className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-          <h3 className="text-lg font-semibold mb-2">Connect Wallet to Get Started</h3>
-          <p className="text-muted-foreground">
-            Connect your wallet to access quick actions and start building your empire.
-          </p>
-        </CardContent>
-      </Card>
-    )
-  }
+ 
 
   return (
     <div className="space-y-6">
