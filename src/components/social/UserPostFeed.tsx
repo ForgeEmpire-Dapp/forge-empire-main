@@ -9,7 +9,7 @@ interface UserPostFeedProps {
 }
 
 export const UserPostFeed = ({ address, limit = 20 }: UserPostFeedProps) => {
-  const { postIds } = useUserPosts(address)
+  const { postIds, refetch } = useUserPosts(address)
 
   if (!address) {
     return (
@@ -23,7 +23,7 @@ export const UserPostFeed = ({ address, limit = 20 }: UserPostFeedProps) => {
   if (postIds.length === 0) {
     return (
       <div className="space-y-4">
-        <PostCreator onPostCreated={() => {}} />
+        <PostCreator onPostCreated={refetch} />
         <div className="text-center py-8">
           <MessageSquare className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
           <h3 className="text-lg font-semibold mb-2">No Posts Yet</h3>
@@ -37,7 +37,7 @@ export const UserPostFeed = ({ address, limit = 20 }: UserPostFeedProps) => {
 
   return (
     <div className="space-y-4">
-      <PostCreator onPostCreated={() => {}} />
+      <PostCreator onPostCreated={refetch} />
       {displayPosts
         .slice()
         .reverse() // Show newest posts first
