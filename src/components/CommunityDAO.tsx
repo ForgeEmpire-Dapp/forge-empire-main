@@ -1,10 +1,53 @@
-
 import { useState } from 'react';
 import { useCommunityDAO, useHasVoted, useProposalExecutionTime } from '@/hooks/useCommunityDAO';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAccount } from 'wagmi';
+import { Skeleton } from '@/components/ui/skeleton';
+
+const ProposalSkeleton = () => (
+  <div className="space-y-4">
+    {[...Array(3)].map((_, i) => (
+      <div key={i} className="p-4 border rounded-lg space-y-2">
+        <Skeleton className="h-4 w-3/4" />
+        <Skeleton className="h-4 w-1/2" />
+        <div className="flex space-x-2 mt-2">
+          <Skeleton className="h-8 w-20" />
+          <Skeleton className="h-8 w-20" />
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
+const ProposalListItem = ({ proposal, vote, isVoting, executeProposal, isExecutingProposal, address }) => {
+  const { hasVoted, isLoadingHasVoted } = useHasVoted(proposal.id, address);
+  const { proposalExecutionTime, isLoadingExecutionTime } = useProposalExecutionTime(proposal.id);
+
+  const canVote = !hasVoted && !isLoadingHasVoted && proposal.status === 'active';
+  const canExecute = proposal.status === 'passed' && !proposal.executed;
+
+  return (
+    <li className="p-4 border rounded-lg">
+      <h3 className="font-bold">{proposal.description}</h3>
+      <p>Status: {proposal.status}</p>
+      <p>Votes for: {proposal.votesFor.toString()}</p>
+      <p>Votes against: {proposal.votesAgainst.toString()}</p>
+      {canVote && (
+        <div className="flex space-x-2 mt-2">
+          <Button onClick={() => vote(proposal.id, true)} disabled={isVoting}>Vote For</Button>
+          <Button onClick={() => vote(proposal.id, false)} disabled={isVoting} variant="destructive">Vote Against</Button>
+        </div>
+      )}
+      {canExecute && (
+        <Button onClick={() => executeProposal(proposal.id)} disabled={isExecutingProposal} className="mt-2">
+          {isExecutingProposal ? 'Executing...' : 'Execute'}
+        </Button>
+      )}
+    </li>
+  );
+};
 
 export const CommunityDAOComponent = () => {
   const { 
@@ -70,11 +113,19 @@ export const CommunityDAOComponent = () => {
         </CardHeader>
         <CardContent>
           {isLoadingProposals ? (
-            <p>Loading proposals...</p>
+            <ProposalSkeleton />
           ) : (
             <ul className="space-y-4">
               {proposals.map((p) => (
-                <ProposalListItem key={p.id} proposal={p} vote={vote} isVoting={isVoting} executeProposal={executeProposal} isExecutingProposal={isExecutingProposal} address={address} />
+                <ProposalListItem
+                  key={p.id}
+                  proposal={p}
+                  vote={vote}
+                  isVoting={isVoting}
+                  executeProposal={executeProposal}
+                  isExecutingProposal={isExecutingProposal}
+                  address={address}
+                />
               ))}
             </ul>
           )}
@@ -119,33 +170,5 @@ export const CommunityDAOComponent = () => {
         </CardContent>
       </Card>
     </div>
-  );
-};
-
-const ProposalListItem = ({ proposal, vote, isVoting, executeProposal, isExecutingProposal, address }) => {
-  const { hasVoted, isLoadingHasVoted } = useHasVoted(proposal.id, address);
-  const { proposalExecutionTime, isLoadingExecutionTime } = useProposalExecutionTime(proposal.id);
-
-  const canVote = !hasVoted && !isLoadingHasVoted && proposal.status === 'active';
-  const canExecute = proposal.status === 'passed' && !proposal.executed;
-
-  return (
-    <li className="p-4 border rounded-lg">
-      <h3 className="font-bold">{proposal.description}</h3>
-      <p>Status: {proposal.status}</p>
-      <p>Votes for: {proposal.votesFor.toString()}</p>
-      <p>Votes against: {proposal.votesAgainst.toString()}</p>
-      {canVote && (
-        <div className="flex space-x-2 mt-2">
-          <Button onClick={() => vote(proposal.id, true)} disabled={isVoting}>Vote For</Button>
-          <Button onClick={() => vote(proposal.id, false)} disabled={isVoting} variant="destructive">Vote Against</Button>
-        </div>
-      )}
-      {canExecute && (
-        <Button onClick={() => executeProposal(proposal.id)} disabled={isExecutingProposal} className="mt-2">
-          {isExecutingProposal ? 'Executing...' : 'Execute'}
-        </Button>
-      )}
-    </li>
   );
 };
