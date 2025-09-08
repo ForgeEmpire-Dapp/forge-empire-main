@@ -328,13 +328,12 @@ contract CommunityDAO is AccessControl, ReentrancyGuard {
         }
         
         // Validate proposal value if it contains ETH transfer
-        if (_callData.length >= 68) { // Basic check for value parameter
-            // This is a simplified check - in production, you'd parse the calldata more thoroughly
+        if (_callData.length >= 36) { // Check for selector + one argument
             bytes memory valueData = new bytes(32);
             for (uint i = 0; i < 32; i++) {
                 valueData[i] = _callData[4 + i];
             }
-            uint256 proposalValue = abi.decode(valueData, (uint256));
+            (uint256 proposalValue) = abi.decode(valueData, (uint256));
             if (proposalValue > maxProposalValue) {
                 revert ProposalValueExceedsMaximum(proposalValue, maxProposalValue);
             }

@@ -50,10 +50,10 @@ const Index = () => {
               Building the future of decentralized communities on Avalanche
             </p>
             <div className="flex justify-center space-x-4 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-primary transition-colors">Docs</a>
-              <a href="#" className="hover:text-primary transition-colors">Discord</a>
-              <a href="#" className="hover:text-primary transition-colors">Twitter</a>
-              <a href="#" className="hover:text-primary transition-colors">GitHub</a>
+              <a href="#" className="hover:text-primary transition-colors" aria-label="Link to documentation">Docs</a>
+              <a href="#" className="hover:text-primary transition-colors" aria-label="Link to Discord community">Discord</a>
+              <a href="#" className="hover:text-primary transition-colors" aria-label="Link to Twitter profile">Twitter</a>
+              <a href="#" className="hover:text-primary transition-colors" aria-label="Link to GitHub repository">GitHub</a>
             </div>
           </div>
         </div>

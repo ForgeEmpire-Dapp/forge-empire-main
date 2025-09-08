@@ -99,7 +99,7 @@ module.exports = {
     avalanche: {
       url: 'https://api.avax.network/ext/bc/C/rpc',
       chainId: 43114,
-      accounts: [process.env.PRIVATE_KEY],
+      // accounts: [process.env.PRIVATE_KEY],
       gasPrice: 225000000000, // 225 nAVAX (typical for mainnet)
       gas: 8000000,
       timeout: 60000
@@ -107,7 +107,7 @@ module.exports = {
     fuji: {
       url: 'https://api.avax-test.network/ext/bc/C/rpc',
       chainId: 43113,
-      accounts: [process.env.PRIVATE_KEY],
+      // accounts: [process.env.PRIVATE_KEY],
       gasPrice: 35000000000, // 35 nAVAX
       gas: 8000000,
       timeout: 60000

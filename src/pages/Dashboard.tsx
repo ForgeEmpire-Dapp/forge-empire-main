@@ -1,6 +1,5 @@
 import { PageLayout } from '@/components/layout/PageLayout'
 import { EnhancedDashboard } from '@/components/dashboard/EnhancedDashboard'
-import { VoiceChatWidget } from '@/components/ai/VoiceChatWidget'
 
 export default function Dashboard() {
   return (

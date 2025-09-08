@@ -157,9 +157,13 @@ const ProfilePage = () => {
               </TabsContent>
               
               <TabsContent value="achievements" className="mt-6">
-                <BadgeGallery 
-                  badges={achievements || []} 
-                />
+                {achievementsLoading ? (
+                  <div className="text-center text-muted-foreground py-8">Loading achievements...</div>
+                ) : (
+                  <BadgeGallery 
+                    badges={achievements || []} 
+                  />
+                )}
               </TabsContent>
               
               <TabsContent value="activity" className="mt-6">

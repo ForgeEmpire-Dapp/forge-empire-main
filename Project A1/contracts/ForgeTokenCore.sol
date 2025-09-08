@@ -143,8 +143,13 @@ contract ForgeTokenCore is
         
         if (typeHash == keccak256("fee")) {
             oldManager = feeManager;
+            if (oldManager != address(0)) {
+                _revokeRole(FEE_MANAGER_ROLE, oldManager);
+            }
             feeManager = manager;
-            _grantRole(FEE_MANAGER_ROLE, manager);
+            if (manager != address(0)) {
+                _grantRole(FEE_MANAGER_ROLE, manager);
+            }
         } else if (typeHash == keccak256("utility")) {
             oldManager = utilityManager;
             utilityManager = manager;

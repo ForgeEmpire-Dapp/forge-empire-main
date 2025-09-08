@@ -38,6 +38,14 @@ describe("QuestRegistry", function () {
     // Grant PROGRESS_RECORDER_ROLE to progressRecorder
     const PROGRESS_RECORDER_ROLE = await questRegistry.PROGRESS_RECORDER_ROLE();
     await questRegistry.grantRole(PROGRESS_RECORDER_ROLE, progressRecorder.address);
+
+    // Grant XP_AWARDER_ROLE to questRegistry
+    const XP_AWARDER_ROLE = await xpEngine.XP_AWARDER_ROLE();
+    await xpEngine.grantRole(XP_AWARDER_ROLE, await questRegistry.getAddress());
+
+    // Grant MINTER_ROLE to questRegistry
+    const MINTER_ROLE = await badgeMinterMock.MINTER_ROLE();
+    await badgeMinterMock.grantRole(MINTER_ROLE, await questRegistry.getAddress());
   });
 
   describe("Deployment & Roles", function () {
@@ -127,7 +135,7 @@ describe("QuestRegistry", function () {
             badgeId,
             isRepeatable,
             true
-        )).to.emit(questRegistry, "QuestUpdated");
+        )).to.emit(questRegistry, "QuestUpdated");;
 
         const updatedQuest = await questRegistry.getQuest(1);
         expect(updatedQuest.description).to.equal(newDescription);
@@ -208,8 +216,26 @@ describe("QuestRegistry", function () {
         await questRegistry.connect(questAdmin).createQuest(questType, description, parameters, xpReward, badgeId, isRepeatable);
 
         const questId = 1;
-        const messageHash = ethers.solidityPackedKeccak256(["address", "uint256", "address"], [await questRegistry.getAddress(), questId, user.address]);
-        const signature = await questSigner.signMessage(ethers.getBytes(messageHash));
+        const domain = {
+            name: "QuestRegistry",
+            version: "1", // Assuming a version for the contract
+            chainId: (await ethers.provider.getNetwork()).chainId,
+            verifyingContract: await questRegistry.getAddress(),
+        };
+
+        const types = {
+            QuestCompletion: [
+                { name: "questId", type: "uint256" },
+                { name: "user", type: "address" },
+            ],
+        };
+
+        const value = {
+            questId: questId,
+            user: user.address,
+        };
+
+        const signature = await questSigner.signTypedData(domain, types, value);
 
         await expect(questRegistry.connect(user).completeQuest(user.address, questId, signature))
             .to.emit(questRegistry, "QuestCompleted").withArgs(user.address, questId, xpReward, badgeId);

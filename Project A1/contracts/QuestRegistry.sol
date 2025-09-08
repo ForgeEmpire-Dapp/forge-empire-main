@@ -267,22 +267,16 @@ contract QuestRegistry is Initializable, AccessControlUpgradeable, PausableUpgra
             (requiredProgress) = abi.decode(quest.parameters, (uint256));
             if (userQuestProgress[_user][_questId] >= requiredProgress) {
                 completed = true;
-            } else {
-                revert InsufficientProgress(requiredProgress, userQuestProgress[_user][_questId]);
             }
         } else if (quest.questType == QuestType.DAO_VOTE) {
             (requiredProgress) = abi.decode(quest.parameters, (uint256));
             if (userQuestProgress[_user][_questId] >= requiredProgress) {
                 completed = true;
-            } else {
-                revert InsufficientProgress(requiredProgress, userQuestProgress[_user][_questId]);
             }
         } else if (quest.questType == QuestType.BADGE_MINT) {
             (, requiredProgress) = abi.decode(quest.parameters, (uint256, uint256));
             if (userQuestProgress[_user][_questId] >= requiredProgress) {
                 completed = true;
-            } else {
-                revert InsufficientProgress(requiredProgress, userQuestProgress[_user][_questId]);
             }
         } else if (quest.questType == QuestType.CUSTOM) {
             if (userQuestProgress[_user][_questId] >= 1) {

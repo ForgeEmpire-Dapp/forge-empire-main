@@ -92,4 +92,24 @@ describe("CommunityDAO Edge Cases", function () {
     await expect(communityDAO.connect(executor).executeProposal(revertProposalId))
       .to.be.revertedWithCustomError(communityDAO, "ExecutionFailed");
   });
+
+  it("Should not allow executing a proposal before the timelock has expired", async function () {
+    const callData = "0x12345678";
+    const tx = await communityDAO.connect(proposer).propose("Timelock test", addr1.address, callData);
+    const receipt = await tx.wait();
+    const proposalId = receipt.logs[0].args.proposalId;
+
+    await communityDAO.connect(voter1).vote(proposalId, true);
+    await communityDAO.connect(voter2).vote(proposalId, true);
+    await communityDAO.connect(voter3).vote(proposalId, true);
+
+    await ethers.provider.send("evm_increaseTime", [86401]);
+    await ethers.provider.send("evm_mine", []);
+
+    await expect(communityDAO.connect(executor).executeProposal(proposalId))
+      .to.emit(communityDAO, "ProposalQueued");
+
+    await expect(communityDAO.connect(executor).executeProposal(proposalId))
+      .to.be.revertedWithCustomError(communityDAO, "TimelockNotExpired");
+  });
 });

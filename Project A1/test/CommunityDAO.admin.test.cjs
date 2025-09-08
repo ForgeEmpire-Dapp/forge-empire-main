@@ -51,4 +51,32 @@ describe("CommunityDAO Admin", function () {
     await expect(communityDAO.connect(addr1).setTotalVoters(200))
       .to.be.revertedWithCustomError(communityDAO, "AccessControlUnauthorizedAccount");
   });
+
+  it("Should allow admin to blacklist a target", async function () {
+    await communityDAO.setBlacklistedTarget(addr1.address, true);
+    expect(await communityDAO.blacklistedTargets(addr1.address)).to.be.true;
+  });
+
+  it("Should allow admin to whitelist a target", async function () {
+    await communityDAO.setBlacklistedTarget(addr1.address, true);
+    await communityDAO.setBlacklistedTarget(addr1.address, false);
+    expect(await communityDAO.blacklistedTargets(addr1.address)).to.be.false;
+  });
+
+  it("Should not allow non-admin to blacklist a target", async function () {
+    await expect(communityDAO.connect(addr1).setBlacklistedTarget(addr1.address, true))
+      .to.be.revertedWithCustomError(communityDAO, "AccessControlUnauthorizedAccount");
+  });
+
+  it("Should allow admin to set max proposal value", async function () {
+    const newMaxValue = ethers.parseEther("5000");
+    await communityDAO.setMaxProposalValue(newMaxValue);
+    expect(await communityDAO.maxProposalValue()).to.equal(newMaxValue);
+  });
+
+  it("Should not allow non-admin to set max proposal value", async function () {
+    const newMaxValue = ethers.parseEther("5000");
+    await expect(communityDAO.connect(addr1).setMaxProposalValue(newMaxValue))
+      .to.be.revertedWithCustomError(communityDAO, "AccessControlUnauthorizedAccount");
+  });
 });

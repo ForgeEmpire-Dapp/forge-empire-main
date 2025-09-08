@@ -51,7 +51,7 @@ export const HeroSection = () => {
           </div>
           <div className="text-center space-y-2">
             <div className="text-3xl font-bold text-accent">∞</div>
-            <div className="text-sm text-muted-foreground">Possibilities</div>
+            <div className="text-sm text-muted-foreground" title="Unlock endless opportunities with our modular platform, allowing for custom integrations and future expansions.">Possibilities</div>
           </div>
           <div className="text-center space-y-2">
             <div className="text-3xl font-bold text-success">FUJI</div>
